@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { getUser } from '../reducks/users/selectors';
 
 const OrderConfirmation = () => {
     const selector = useSelector(state => state);
+    const dispatch = useDispatch();
     const user = JSON.parse(localStorage.getItem('LOGIN_USER_KEY'));
+    const backToHome =()=>{
+    dispatch(push('/'))
+    }
     useEffect(() => {
         console.log(user);
     }, []);
@@ -18,7 +22,7 @@ const OrderConfirmation = () => {
                 Our staff will be contacting with you to tell next steps.
             </h6>
             <div class="backtohome">
-                <button class="thankyoubtn" type="submit">
+                <button class="thankyoubtn" onClick={backToHome} type="submit">
                     Back To Home
                 </button>
             </div>
