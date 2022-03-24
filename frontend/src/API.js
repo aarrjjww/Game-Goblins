@@ -2,11 +2,11 @@ import axios from 'axios';
 const LOGIN_USER_KEY = 'LOGIN_USER_KEY';
 
 var baseURL;
-if (process.env.REACT_APP_ENVIRONMENT && process.env.REACT_APP_ENVIRONMENT === 'PRODUCTION') {
-    baseURL = process.env.REACT_APP_API_BASE_URL;
-} else baseURL = 'http://127.0.0.1:8000';
+// if (process.env.REACT_APP_ENVIRONMENT && process.env.REACT_APP_ENVIRONMENT === 'PRODUCTION') {
+//     baseURL = process.env.REACT_APP_API_BASE_URL;
+// } else baseURL = 'http://127.0.0.1:8000';
 
-// baseURL = 'https://super-sports-backendapp.herokuapp.com/';
+baseURL = 'https://game-goblins-backend.herokuapp.com/';
 
 const api = axios.create({
     baseURL: baseURL,
